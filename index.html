@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookself Apps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="navbar__logo">Bookself</div>
+                <div class="navbar__menu">
+                    <ul class="reset">
+                        <li class="active"><a class="reset" href="index.html">Add Book</a></li>
+                        <li><a class="reset" href="reading.html">Reading List</a></li>
+                        <li><a class="reset" href="completed.html">Completed list</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <h1 class="center mbt-2">Add New Book</h1>
+            <div class="book-form">
+                <div class="book-form__input">
+                    <label for="book-id">ID Book</label>
+                    <input id="book-id" type="number" disabled>
+                </div>
+                <div class="book-form__input">
+                    <label for="book-title">Title Book</label>
+                    <input id="book-title" type="text">
+                </div>
+                <div class="book-form__input">
+                    <label for="book-author">Author</label>
+                    <input id="book-author" type="text">
+                </div>
+                <div class="book-form__input">
+                    <label for="book-year">Year</label>
+                    <input id="book-year" type="number">
+                </div>
+                <div class="book-form__check">
+                    <input id="book-status" type="checkbox">
+                    <label for="book-status">Finished reading</label>
+                </div>
+                <div onclick="addBook()" class="book-form__submit">Submit</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
+    <script>
+        s_bookID.value = +new Date;
+    </script>
+</body>
+</html>

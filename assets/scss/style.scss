@@ -1,0 +1,204 @@
+@import './globals';
+@import './variables';
+
+nav{
+    font-weight: $fw-bold;
+
+    .navbar{
+        width: $laptop-l;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        &__logo{
+            font-weight: $fw-extrabold;
+            font-size: 1.5rem;
+            line-height: 66px;
+        }
+        &__menu{
+            ul{
+                display: flex;
+                li{
+                    margin-left: 2em;
+                    a{
+                        display: block;
+                        position: relative;
+                        height: 66px;
+                        padding: 0em 0.5em;
+                        line-height: 66px;
+                        overflow: hidden;
+
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 0.2em;
+                            border-radius: 1em;
+                            background-color: $font-secondary-color;
+                            transform: translate3d(-100%, 0, 0);
+                            opacity: 0;
+                            transition: opacity 300ms, transform 300ms;
+                        }
+                        &:hover::after,
+                        &:focus::after{
+                            opacity: 1;
+                            transform: translate3d(0, 0, 0);
+                        }
+                    }
+                    &.active{
+                        color: $font-secondary-color;
+                    }
+                }
+            }
+        }
+
+        &__search{
+            display: flex;
+            align-items: center;
+            input{
+                font-size: 1rem;
+                width: 400px;
+                margin-top: 0.25em;
+                padding: 0.5em 0.75em;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+}
+main{
+    .content{
+        width: $laptop-l;
+        margin: auto;
+
+        .book-form{
+            margin: auto;
+            width: 450px;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            
+            &__input{
+                margin-bottom: 1em;
+
+                label{
+                    font-size: 0.9rem;
+                    font-weight: $fw-bold;
+                    display: block;
+                }
+                input{
+                    font-size: 1rem;
+                    width: 400px;
+                    margin-top: 0.25em;
+                    padding: 0.5em 0.75em;
+                    border-radius: 0.5rem;
+                }
+            }
+            &__check{
+                margin-bottom: 1em;
+
+                label{
+                    font-family: 'Roboto Mono', monospace;
+                }
+            }
+            &__submit{
+                padding: 0.8em 0em;
+                font-weight: $fw-bold;
+                text-align: center;
+                border-radius: 0.375rem;
+                color: white;
+                background-color: $font-color;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: rgb(82, 82, 82);
+                }
+            }
+        }
+
+        .drawer{
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 2rem;
+            justify-content: space-evenly;
+            .card-book{
+                width: 265px;
+
+                &__photo{
+                    img{
+                        width: 264px;
+                    }
+                }
+
+                &__details{
+                    margin: 1em 0em;
+                    font-weight: $fw-bold;
+                }
+
+                &__action{
+                    margin: 1em 0em;
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: $fw-medium;
+                    font-size: 0.8rem;
+
+                    &_status, &_edit, &_delete{
+                        border: 1px solid black;
+                        padding: 4px 8px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                    &_status:hover, &_edit:hover, &_delete:hover{
+                        background: #000;
+                        color: white;
+                    }
+                }
+
+                &__title{
+                    padding: 0em 1em;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4); 
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; 
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                }
+                .close:hover,
+                .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .content-modal{
+        width: auto;
+    }
+}

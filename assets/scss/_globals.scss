@@ -1,0 +1,34 @@
+@import 'variables';
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    color: rgb(23, 23, 23);
+}
+
+.reset{
+    color: inherit;
+    text-decoration: none;
+    list-style: none;
+}
+
+.center{
+    text-align: center;
+}
+
+.mbt-15{
+    margin: 1.5rem 0rem;
+}
+.mbt-2{
+    margin: 2rem 0rem;
+}
+
+.fw-eb{
+    font-weight: $fw-extrabold;
+}
+
+.title{
+    font-size: 2rem;
+}
